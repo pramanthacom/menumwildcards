@@ -1,0 +1,78 @@
+:root {
+  color-scheme: dark;
+  --ink: #f3ead9;
+  --muted: #a99d89;
+  --copper: #c98547;
+  --surface: #162019;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(119, 86, 47, .2), transparent 35rem),
+    radial-gradient(circle at 90% 35%, rgba(42, 91, 68, .2), transparent 32rem),
+    #0d120f;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.hero {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 64px 0 36px;
+  text-align: center;
+}
+
+.logo { width: 48px; height: 48px; object-fit: contain; border-radius: 12px; }
+.eyebrow { margin: 20px 0 10px; color: var(--copper); font: 600 11px/1.4 Arial, sans-serif; letter-spacing: .24em; }
+h1 { margin: 0; font-size: clamp(40px, 7vw, 76px); font-weight: 400; letter-spacing: -.035em; }
+.intro { max-width: 620px; margin: 18px auto 0; color: var(--muted); font: 16px/1.65 Arial, sans-serif; }
+
+.gallery {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  min-height: 430px;
+  border: 1px solid rgba(201, 133, 71, .28);
+  border-radius: 24px;
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, .3);
+  text-decoration: none;
+  transform: translateY(0);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.tile:hover, .tile:focus-visible {
+  transform: translateY(-7px);
+  border-color: var(--copper);
+  box-shadow: 0 28px 65px rgba(0, 0, 0, .48);
+  outline: none;
+}
+
+.tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.tile:hover img { transform: scale(1.025); }
+.tile::after { content: ""; position: absolute; inset: 42% 0 0; background: linear-gradient(transparent, rgba(5, 8, 6, .95)); }
+.tile span { position: absolute; z-index: 1; inset: auto 22px 22px; display: flex; flex-direction: column; gap: 7px; }
+.tile b { font-size: 21px; font-weight: 400; }
+.tile small { color: #c9bba5; font: 11px/1.4 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.tile-pair::before { content: "ПАРНАЯ"; position: absolute; z-index: 2; top: 20px; right: 18px; padding: 7px 10px; border-radius: 20px; background: rgba(13, 18, 15, .8); color: #e0a76e; font: 700 9px Arial, sans-serif; letter-spacing: .16em; }
+
+footer { padding: 48px 20px 56px; color: #716a5f; text-align: center; font: 11px Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+
+@media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) {
+  .hero { padding-top: 42px; }
+  .gallery { grid-template-columns: 1fr; width: min(360px, calc(100% - 32px)); }
+  .tile { min-height: 520px; }
+}
