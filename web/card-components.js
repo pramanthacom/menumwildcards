@@ -165,7 +165,7 @@
     "10-nit": {
       number: "X",
       title: "Нить",
-      art: "../art/approved/10-nit-v1.png",
+      art: "../art/approved/10-nit-v2.png",
       artAlt: "Светящиеся нити соединяют людей, костры и звёзды фестиваля",
       message: "Между тобой и кем-то здесь уже<br>натянута нить. Она звенит.",
       qr: "../qr/10-nit-demo.png",
@@ -273,7 +273,7 @@
     "16-teplo": {
       number: "XVI",
       title: "Тепло",
-      art: "../art/approved/16-teplo-v1.png",
+      art: "../art/approved/16-teplo-v2.png",
       artAlt: "Переданное из рук в руки тепло освещает целый круг людей",
       message: "Запасайся теплом — его здесь больше,<br>чем можно унести.",
       qr: "../qr/16-teplo-demo.png",
@@ -767,7 +767,7 @@
     "43-melodiya": {
       number: "XLIII",
       title: "Мелодия",
-      art: "../art/approved/43-melodiya-v1.png",
+      art: "../art/approved/43-melodiya-v2.png",
       artAlt: "Воздушная мелодия из цветных птиц и лент ищет устойчивый пульс",
       message: "Ты — мелодия, которая ищет,<br>на что опереться. Ритм уже здесь.",
       qr: "../qr/43-melodiya-demo.png",
