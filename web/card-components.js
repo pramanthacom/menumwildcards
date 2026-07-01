@@ -472,4 +472,15 @@
       element.innerHTML = readingMarkup(card);
     }
   });
+
+  document.querySelectorAll(".page-footer").forEach((footer) => {
+    const label = footer.lastElementChild;
+    if (!label || label.matches("a")) return;
+
+    const link = document.createElement("a");
+    link.href = "https://menum.space/";
+    link.textContent = label.textContent || "menum.space";
+    link.setAttribute("aria-label", "Перейти на сайт MENUM");
+    label.replaceWith(link);
+  });
 })();
