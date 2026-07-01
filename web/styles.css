@@ -427,13 +427,21 @@ h1 {
 
 .page-footer {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 28px clamp(25px, 8vw, 76px) 42px;
   color: rgba(243, 233, 210, .45);
   font: 600 10px/1.4 system-ui, sans-serif;
   letter-spacing: .12em;
   text-transform: uppercase;
+}
+
+.page-footer span:last-child {
+  font-size: 9px;
+  letter-spacing: .18em;
+  opacity: .72;
 }
 
 @media (max-width: 520px) {
