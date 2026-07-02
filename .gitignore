@@ -8,6 +8,7 @@
 web/*
 !web/styles.css
 !web/card-components.js
+!web/card-back.html
 !web/preview-*.html
 !art/
 art/*
@@ -19,3 +20,7 @@ qr/*
 !brand/
 brand/*
 !brand/menum-logo-source.png
+!brand/wild-logo-source.png
+!back/
+back/*
+!back/card-back-v1.svg

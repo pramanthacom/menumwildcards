@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1510">
+    <title>Рубашка карты · MENUM × WILD</title>
+    <style>
+      * { box-sizing: border-box; }
+      html { min-height: 100%; background: #090c0a; }
+      body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        place-items: center;
+        padding: 42px 20px 64px;
+        color: #ead9ba;
+        background:
+          radial-gradient(circle at 50% 34%, rgba(190, 104, 50, .15), transparent 34rem),
+          linear-gradient(145deg, #132019, #090b09 70%);
+        font-family: Inter, system-ui, sans-serif;
+      }
+      main { width: min(100%, 560px); text-align: center; }
+      header { margin-bottom: 26px; }
+      header span {
+        color: rgba(231, 174, 98, .64);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .24em;
+        text-transform: uppercase;
+      }
+      h1 { margin: 8px 0 7px; font: 500 34px/1.1 Georgia, serif; }
+      p { margin: 0; color: rgba(238, 222, 194, .52); font-size: 13px; line-height: 1.6; }
+      .back {
+        display: block;
+        width: min(88vw, 490px);
+        margin: 0 auto;
+        aspect-ratio: 7 / 12;
+        border-radius: 27px;
+        box-shadow: 0 48px 100px rgba(0,0,0,.62), 0 0 0 1px rgba(225,153,77,.36);
+      }
+      .actions { display: flex; justify-content: center; margin-top: 24px; }
+      a {
+        padding: 10px 15px;
+        border: 1px solid rgba(222, 154, 78, .35);
+        border-radius: 999px;
+        color: rgba(238, 222, 194, .72);
+        font-size: 11px;
+        letter-spacing: .08em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      a:hover, a:focus-visible { border-color: rgba(235, 175, 102, .8); color: #fff1d4; outline: none; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>MENUM × WILD</span>
+        <h1>Рубашка карты</h1>
+        <p>Солнечный знак и тихий орнамент из фирменных символов.</p>
+      </header>
+      <img class="back" src="../back/card-back-v1.svg" alt="Рубашка карты MENUM × WILD">
+      <div class="actions"><a href="../back/card-back-v1.svg">Открыть SVG отдельно</a></div>
+    </main>
+  </body>
+</html>
