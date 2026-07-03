@@ -17,6 +17,7 @@ web/*
 art/*
 !art/approved/
 !art/approved/*.png
+!art/approved/*.webp
 !qr/
 qr/*
 !qr/*.png
