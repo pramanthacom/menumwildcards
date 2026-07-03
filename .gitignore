@@ -9,6 +9,9 @@ web/*
 !web/styles.css
 !web/card-components.js
 !web/card-back.html
+!web/draw.html
+!web/draw.css
+!web/draw.js
 !web/preview-*.html
 !art/
 art/*

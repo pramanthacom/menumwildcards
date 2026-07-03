@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#07110d">
+    <meta name="robots" content="noindex">
+    <title>Выбрать карту · MENUM × WILD</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./draw.css">
+    <script src="./card-components.js" defer></script>
+    <script src="./draw.js" defer></script>
+  </head>
+  <body class="draw-page" data-state="idle">
+    <main class="draw-shell">
+      <header class="draw-header">
+        <div class="draw-brand"><span>MENUM</span><i></i><span>WILD ECSTATIC · 2026</span></div>
+        <h1>Ваша карта фестиваля</h1>
+        <p id="draw-instruction">Остановитесь на мгновение и доверьтесь выбору.</p>
+      </header>
+
+      <section class="draw-stage" aria-live="polite">
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+
+        <div class="deck" id="deck" aria-hidden="true">
+          <div class="shuffle-card shuffle-card-1"><img src="../back/card-back-mosaic-v2.png" alt=""></div>
+          <div class="shuffle-card shuffle-card-2"><img src="../back/card-back-mosaic-v2.png" alt=""></div>
+          <div class="shuffle-card shuffle-card-3"><img src="../back/card-back-mosaic-v2.png" alt=""></div>
+          <div class="shuffle-card shuffle-card-4"><img src="../back/card-back-mosaic-v2.png" alt=""></div>
+          <div class="shuffle-card shuffle-card-5"><img src="../back/card-back-mosaic-v2.png" alt=""></div>
+          <div class="shuffle-card shuffle-card-6"><img src="../back/card-back-mosaic-v2.png" alt=""></div>
+          <div class="shuffle-card shuffle-card-7"><img src="../back/card-back-mosaic-v2.png" alt=""></div>
+        </div>
+
+        <div class="chosen-card" id="chosen-card" aria-hidden="true">
+          <div class="chosen-card-inner">
+            <div class="chosen-back"><img src="../back/card-back-mosaic-v2.png" alt="Рубашка колоды MENUM × WILD"></div>
+            <section class="print-card chosen-face" id="chosen-face"></section>
+          </div>
+        </div>
+      </section>
+
+      <section class="draw-controls" aria-label="Управление выбором карты">
+        <button class="primary-action" id="start-button" type="button">Выбрать карту</button>
+        <button class="stop-action" id="stop-button" type="button" hidden>Стоп</button>
+        <div class="result-actions" id="result-actions" hidden>
+          <div class="photo-note">
+            <strong>Сфотографируйте свою карту</strong>
+            <span>Экран вернётся к началу через <b id="countdown">30</b> сек.</span>
+          </div>
+          <button class="reset-action" id="reset-button" type="button">Новый участник</button>
+        </div>
+      </section>
+
+      <footer class="draw-footer">
+        <span>Случайный выбор из 44 карт</span>
+        <span class="staff-hint">Пробел — выбор/стоп · Esc — сброс</span>
+      </footer>
+    </main>
+  </body>
+</html>

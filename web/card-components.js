@@ -879,13 +879,23 @@
       </div>`;
   }
 
-  document.querySelectorAll("[data-card-face]").forEach((element) => {
-    const card = cards[element.dataset.cardFace];
+  function renderFace(element, key) {
+    const card = cards[key];
     if (card) {
       element.classList.toggle("is-pair", Boolean(card.pair));
       element.classList.toggle("has-long-title", card.title.length > 12);
       element.innerHTML = faceMarkup(card);
     }
+  }
+
+  window.MENUMDeck = {
+    keys: Object.freeze(Object.keys(cards)),
+    cards,
+    renderFace
+  };
+
+  document.querySelectorAll("[data-card-face]").forEach((element) => {
+    renderFace(element, element.dataset.cardFace);
   });
 
   document.querySelectorAll("[data-card-reading]").forEach((element) => {
