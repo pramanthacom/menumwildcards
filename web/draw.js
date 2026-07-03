@@ -83,7 +83,7 @@
     chosenCard.setAttribute("aria-hidden", "true");
     chosenFace.removeAttribute("data-card-face");
     chosenFace.innerHTML = "";
-    instruction.textContent = "Остановитесь на мгновение и доверьтесь выбору.";
+    instruction.textContent = "Спроси у Вселенной, что ждёт тебя здесь.";
     remaining = RESET_SECONDS;
     countdown.textContent = String(remaining);
     startButton.focus({ preventScroll: true });
