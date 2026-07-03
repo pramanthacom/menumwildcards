@@ -1,6 +1,7 @@
 (function () {
   const RESET_SECONDS = 30;
   const REVEAL_DELAY = 1050;
+  const AUTO_STOP_DELAY = 5000;
   const body = document.body;
   const startButton = document.getElementById("start-button");
   const stopButton = document.getElementById("stop-button");
@@ -14,6 +15,7 @@
   let state = "idle";
   let resetTimer = null;
   let revealTimer = null;
+  let autoStopTimer = null;
   let remaining = RESET_SECONDS;
 
   function secureRandomIndex(length) {
@@ -37,12 +39,15 @@
     stopButton.hidden = false;
     resultActions.hidden = true;
     chosenCard.setAttribute("aria-hidden", "true");
-    instruction.textContent = "Когда почувствуете момент — нажмите «Стоп».";
+    instruction.textContent = "Когда почувствуете момент — нажмите яркую кнопку «Стоп».";
+    autoStopTimer = window.setTimeout(stopShuffle, AUTO_STOP_DELAY);
     stopButton.focus({ preventScroll: true });
   }
 
   function stopShuffle() {
     if (state !== "shuffling") return;
+    window.clearTimeout(autoStopTimer);
+    autoStopTimer = null;
     const deck = window.MENUMDeck;
     const key = deck.keys[secureRandomIndex(deck.keys.length)];
     chosenFace.dataset.cardFace = key;
@@ -70,8 +75,10 @@
   function clearTimers() {
     window.clearInterval(resetTimer);
     window.clearTimeout(revealTimer);
+    window.clearTimeout(autoStopTimer);
     resetTimer = null;
     revealTimer = null;
+    autoStopTimer = null;
   }
 
   function resetExperience() {
