@@ -46,7 +46,7 @@
 .draw-header { position: relative; z-index: 20; text-align: center; }
 .draw-brand { display: flex; align-items: center; justify-content: center; gap: 10px; color: rgba(255,243,216,.48); font-size: 9px; font-weight: 700; letter-spacing: .2em; }
 .draw-brand i { width: 3px; height: 3px; border-radius: 50%; background: var(--draw-gold); box-shadow: 0 0 10px var(--draw-gold); }
-.draw-header h1 { margin: 7px 0 4px; font: 400 clamp(27px, 3.2vw, 42px)/1.04 Georgia, serif; letter-spacing: -.02em; }
+.draw-header h1 { margin: 7px 0 11px; font: 400 clamp(27px, 3.2vw, 42px)/1.04 Georgia, serif; letter-spacing: -.02em; }
 .draw-header p { margin: 0; color: rgba(255,243,216,.58); font-size: clamp(13px, 1.6vw, 17px); }
 
 .draw-stage {
