@@ -162,8 +162,8 @@
 .reset-action:focus-visible { outline: 3px solid rgba(255,239,201,.72); outline-offset: 4px; }
 
 .result-actions { display: flex; width: min(100%, 720px); flex-direction: column; align-items: center; justify-content: center; gap: 0; padding: 8px 0; text-align: center; }
-.photo-note { display: flex; max-width: 520px; flex-direction: column; align-items: center; gap: 4px; }
-.photo-note strong { font: 400 clamp(20px, 2.6vw, 29px)/1.1 Georgia, serif; }
+.photo-note { display: flex; max-width: 100%; flex-direction: column; align-items: center; gap: 4px; }
+.photo-note strong { font: 400 clamp(19px, 2.25vw, 27px)/1.1 Georgia, serif; }
 .photo-note span { color: rgba(255,243,216,.55); font-size: 13px; }
 .qr-note { line-height: 1.35; }
 .result-timer { margin-top: 7px; color: rgba(255,243,216,.38); font-size: 11px; letter-spacing: .04em; }
@@ -179,6 +179,10 @@
   font-size: 11px;
 }
 .reset-action:hover { border-color: rgba(118,220,183,.72); background: linear-gradient(135deg, #286f57, #124b3c); }
+
+@media (min-width: 601px) {
+  .photo-note strong { white-space: nowrap; }
+}
 
 .draw-footer { display: flex; justify-content: space-between; padding-top: 14px; border-top: 1px solid rgba(232,184,114,.12); color: rgba(255,243,216,.34); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
 
