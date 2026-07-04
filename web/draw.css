@@ -161,12 +161,24 @@
 .stop-action:focus-visible,
 .reset-action:focus-visible { outline: 3px solid rgba(255,239,201,.72); outline-offset: 4px; }
 
-.result-actions { display: flex; width: min(100%, 720px); align-items: center; justify-content: space-between; gap: 24px; padding: 10px 0; }
-.photo-note { display: flex; flex-direction: column; gap: 5px; }
+.result-actions { display: flex; width: min(100%, 720px); flex-direction: column; align-items: center; justify-content: center; gap: 0; padding: 8px 0; text-align: center; }
+.photo-note { display: flex; max-width: 520px; flex-direction: column; align-items: center; gap: 4px; }
 .photo-note strong { font: 400 clamp(20px, 2.6vw, 29px)/1.1 Georgia, serif; }
 .photo-note span { color: rgba(255,243,216,.55); font-size: 13px; }
 .photo-note b { color: var(--draw-gold); font-variant-numeric: tabular-nums; }
-.reset-action { min-height: 48px; padding: 13px 21px; border: 1px solid rgba(232,184,114,.35); border-radius: 999px; background: rgba(11,22,17,.72); font-size: 11px; }
+.qr-note { line-height: 1.35; }
+.photo-note .result-timer { margin-top: 5px; color: rgba(255,243,216,.38); font-size: 11px; letter-spacing: .04em; }
+.reset-action {
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 13px 23px;
+  border: 1px solid rgba(92,198,160,.42);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(29,91,70,.94), rgba(13,57,45,.96));
+  box-shadow: 0 13px 30px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.08);
+  font-size: 11px;
+}
+.reset-action:hover { border-color: rgba(118,220,183,.72); background: linear-gradient(135deg, #286f57, #124b3c); }
 
 .draw-footer { display: flex; justify-content: space-between; padding-top: 14px; border-top: 1px solid rgba(232,184,114,.12); color: rgba(255,243,216,.34); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
 
@@ -197,10 +209,12 @@
   .deck, .chosen-card { width: min(38vh, 62vw, 280px); }
   .draw-controls { min-height: 62px; }
   .primary-action, .stop-action { min-width: 220px; min-height: 52px; padding: 14px 22px; font-size: 13px; }
-  .result-actions { flex-direction: column; gap: 7px; padding: 0; text-align: center; }
+  .result-actions { gap: 0; padding: 0; text-align: center; }
   .photo-note { gap: 2px; }
   .photo-note strong { font-size: 19px; }
-  .reset-action { min-height: 40px; padding: 10px 17px; }
+  .photo-note span { font-size: 11px; }
+  .photo-note .result-timer { margin-top: 3px; font-size: 10px; }
+  .reset-action { min-height: 40px; margin-top: 12px; padding: 10px 18px; }
   .draw-footer { justify-content: center; }
   .staff-hint { display: none; }
 }
@@ -212,7 +226,8 @@
   .draw-controls { grid-column: 1; grid-row: 1; align-self: end; margin-bottom: 50px; }
   .draw-footer { display: none; }
   .deck, .chosen-card { width: min(50vh, 300px); }
-  .result-actions { flex-direction: column; gap: 9px; text-align: center; }
+  .result-actions { gap: 0; text-align: center; }
+  .reset-action { margin-top: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

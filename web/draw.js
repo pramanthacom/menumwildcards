@@ -62,7 +62,7 @@
   function showResult() {
     setState("result");
     resultActions.hidden = false;
-    instruction.textContent = "Сохраните карту — её послание можно открыть позже.";
+    instruction.textContent = "Сфотографируйте и сохраните свою карту — она ещё пригодится вам на фестивале.";
     remaining = RESET_SECONDS;
     countdown.textContent = String(remaining);
     resetTimer = window.setInterval(() => {
