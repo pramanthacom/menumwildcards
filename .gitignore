@@ -2,6 +2,7 @@
 !.gitignore
 !.nojekyll
 !README.md
+!OFFLINE_INSTALL.md
 !index.html
 !review.css
 !web/
@@ -12,6 +13,9 @@ web/*
 !web/draw.html
 !web/draw.css
 !web/draw.js
+!web/manifest.webmanifest
+!web/sw.js
+!web/app-icon.svg
 !web/preview-*.html
 !art/
 art/*

@@ -1,0 +1,26 @@
+{
+  "id": "./draw.html",
+  "name": "Метафорическая карта фестиваля",
+  "short_name": "MENUM Карта",
+  "description": "Случайный выбор метафорической карты MENUM × WILD",
+  "lang": "ru",
+  "start_url": "./draw.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07110d",
+  "theme_color": "#07110d",
+  "icons": [
+    {
+      "src": "./app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../brand/menum-logo-source.png",
+      "sizes": "621x617",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
