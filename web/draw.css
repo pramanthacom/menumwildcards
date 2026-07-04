@@ -57,7 +57,6 @@
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: .065em;
-  text-transform: uppercase;
 }
 
 .draw-stage {
@@ -182,7 +181,6 @@
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: .07em;
-  text-transform: uppercase;
 }
 .result-timer { margin-top: 7px; color: rgba(255,243,216,.38); font-size: 11px; letter-spacing: .04em; }
 .result-timer b { color: var(--draw-gold); font-variant-numeric: tabular-nums; }

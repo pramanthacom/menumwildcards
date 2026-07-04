@@ -39,7 +39,7 @@
     stopButton.hidden = false;
     resultActions.hidden = true;
     chosenCard.setAttribute("aria-hidden", "true");
-    instruction.textContent = "Когда почувствуете момент — нажмите яркую кнопку «Стоп».";
+    instruction.textContent = "Когда почувствуете момент — нажмите яркую кнопку «Стоп»";
     autoStopTimer = window.setTimeout(stopShuffle, AUTO_STOP_DELAY);
     stopButton.focus({ preventScroll: true });
   }
@@ -55,14 +55,14 @@
     setState("revealing");
     stopButton.hidden = true;
     chosenCard.setAttribute("aria-hidden", "false");
-    instruction.textContent = "Ваша карта выбрана.";
+    instruction.textContent = "Ваша карта выбрана";
     revealTimer = window.setTimeout(showResult, REVEAL_DELAY);
   }
 
   function showResult() {
     setState("result");
     resultActions.hidden = false;
-    instruction.textContent = "Сфотографируйте и сохраните свою карту — она ещё пригодится вам на фестивале.";
+    instruction.textContent = "Сфотографируйте и сохраните свою карту — она ещё пригодится вам на фестивале";
     remaining = RESET_SECONDS;
     countdown.textContent = String(remaining);
     resetTimer = window.setInterval(() => {
@@ -90,7 +90,7 @@
     chosenCard.setAttribute("aria-hidden", "true");
     chosenFace.removeAttribute("data-card-face");
     chosenFace.innerHTML = "";
-    instruction.textContent = "Спроси у Вселенной, что ждёт тебя здесь.";
+    instruction.textContent = "Спроси у Вселенной, что ждёт тебя здесь";
     remaining = RESET_SECONDS;
     countdown.textContent = String(remaining);
     startButton.focus({ preventScroll: true });
