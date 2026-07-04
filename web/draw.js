@@ -39,7 +39,7 @@
     stopButton.hidden = false;
     resultActions.hidden = true;
     chosenCard.setAttribute("aria-hidden", "true");
-    instruction.textContent = "Когда почувствуете момент — нажмите яркую кнопку «Стоп»";
+    instruction.textContent = "Когда почувствуешь момент, нажимай Стоп";
     autoStopTimer = window.setTimeout(stopShuffle, AUTO_STOP_DELAY);
     stopButton.focus({ preventScroll: true });
   }
