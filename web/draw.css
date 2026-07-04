@@ -223,6 +223,11 @@
   .staff-hint { display: none; }
 }
 
+@media (max-width: 600px) and (orientation: portrait) {
+  .draw-header { padding-top: 10px; }
+  .draw-controls { margin-bottom: 16px; }
+}
+
 @media (max-height: 900px) and (orientation: landscape) {
   .draw-shell { grid-template-columns: minmax(330px, .88fr) minmax(0, 1.12fr); grid-template-rows: 1fr; align-items: center; padding-top: 12px; padding-bottom: 12px; }
   .draw-header { grid-column: 1; grid-row: 1; align-self: center; padding: 18px; transform: translateY(-54px); }
