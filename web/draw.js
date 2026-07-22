@@ -1,6 +1,6 @@
 (function () {
   const REVEAL_DELAY = 1050;
-  const AUTO_STOP_DELAY = 5000;
+  const AUTO_STOP_DELAY = 3000;
   const body = document.body;
   const drawStage = document.querySelector(".draw-stage");
   const deckElement = document.getElementById("deck");
