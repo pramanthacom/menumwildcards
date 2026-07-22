@@ -2,6 +2,7 @@
   const REVEAL_DELAY = 1050;
   const AUTO_STOP_DELAY = 5000;
   const body = document.body;
+  const drawStage = document.querySelector(".draw-stage");
   const deckElement = document.getElementById("deck");
   const startButton = document.getElementById("start-button");
   const stopButton = document.getElementById("stop-button");
@@ -56,6 +57,12 @@
     revealTimer = window.setTimeout(showResult, REVEAL_DELAY);
   }
 
+  function stopShuffleFromDeck(event) {
+    if (state !== "shuffling") return;
+    event.preventDefault();
+    stopShuffle();
+  }
+
   function showResult() {
     setState("result");
     resultActions.hidden = false;
@@ -84,7 +91,9 @@
 
   startButton.addEventListener("click", beginShuffle);
   stopButton.addEventListener("click", stopShuffle);
-  deckElement.addEventListener("click", stopShuffle);
+  deckElement.addEventListener("click", stopShuffleFromDeck);
+  deckElement.addEventListener("pointerdown", stopShuffleFromDeck);
+  drawStage.addEventListener("pointerdown", stopShuffleFromDeck);
   resetButton.addEventListener("click", resetExperience);
 
   document.addEventListener("keydown", (event) => {
