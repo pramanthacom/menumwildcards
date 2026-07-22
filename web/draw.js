@@ -1,22 +1,19 @@
 (function () {
-  const RESET_SECONDS = 30;
   const REVEAL_DELAY = 1050;
   const AUTO_STOP_DELAY = 5000;
   const body = document.body;
+  const deckElement = document.getElementById("deck");
   const startButton = document.getElementById("start-button");
   const stopButton = document.getElementById("stop-button");
   const resetButton = document.getElementById("reset-button");
   const resultActions = document.getElementById("result-actions");
   const instruction = document.getElementById("draw-instruction");
-  const countdown = document.getElementById("countdown");
   const chosenCard = document.getElementById("chosen-card");
   const chosenFace = document.getElementById("chosen-face");
 
   let state = "idle";
-  let resetTimer = null;
   let revealTimer = null;
   let autoStopTimer = null;
-  let remaining = RESET_SECONDS;
 
   function secureRandomIndex(length) {
     if (!Number.isInteger(length) || length < 1) throw new Error("Колода пуста");
@@ -63,20 +60,11 @@
     setState("result");
     resultActions.hidden = false;
     instruction.textContent = "Сфотографируйте и сохраните свою карту — она ещё пригодится вам на фестивале";
-    remaining = RESET_SECONDS;
-    countdown.textContent = String(remaining);
-    resetTimer = window.setInterval(() => {
-      remaining -= 1;
-      countdown.textContent = String(Math.max(remaining, 0));
-      if (remaining <= 0) resetExperience();
-    }, 1000);
   }
 
   function clearTimers() {
-    window.clearInterval(resetTimer);
     window.clearTimeout(revealTimer);
     window.clearTimeout(autoStopTimer);
-    resetTimer = null;
     revealTimer = null;
     autoStopTimer = null;
   }
@@ -91,13 +79,12 @@
     chosenFace.removeAttribute("data-card-face");
     chosenFace.innerHTML = "";
     instruction.textContent = "Спроси у Вселенной, что ждёт тебя здесь";
-    remaining = RESET_SECONDS;
-    countdown.textContent = String(remaining);
     startButton.focus({ preventScroll: true });
   }
 
   startButton.addEventListener("click", beginShuffle);
   stopButton.addEventListener("click", stopShuffle);
+  deckElement.addEventListener("click", stopShuffle);
   resetButton.addEventListener("click", resetExperience);
 
   document.addEventListener("keydown", (event) => {
