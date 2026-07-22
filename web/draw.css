@@ -69,7 +69,7 @@
   transform-style: preserve-3d;
 }
 
-.deck { z-index: 4; }
+.deck { z-index: 4; cursor: pointer; touch-action: manipulation; }
 [data-state="shuffling"] .deck { cursor: pointer; }
 [data-state="shuffling"] .draw-stage { cursor: pointer; touch-action: manipulation; }
 .shuffle-card { position: absolute; inset: 0; overflow: hidden; border-radius: 20px; box-shadow: 0 24px 60px rgba(0,0,0,.46), 0 0 0 1px rgba(232,184,114,.3); transform-origin: 50% 80%; }

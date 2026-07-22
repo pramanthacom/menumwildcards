@@ -15,6 +15,7 @@
   let state = "idle";
   let revealTimer = null;
   let autoStopTimer = null;
+  let deckPointerHandled = false;
 
   function secureRandomIndex(length) {
     if (!Number.isInteger(length) || length < 1) throw new Error("Колода пуста");
@@ -57,7 +58,20 @@
     revealTimer = window.setTimeout(showResult, REVEAL_DELAY);
   }
 
-  function stopShuffleFromDeck(event) {
+  function handleDeckAction(event) {
+    if (event.type === "click" && deckPointerHandled) {
+      deckPointerHandled = false;
+      return;
+    }
+    if (event.type === "pointerdown") deckPointerHandled = true;
+    if (state !== "idle" && state !== "shuffling") return;
+    event.preventDefault();
+    event.stopPropagation();
+    if (state === "idle") beginShuffle();
+    else stopShuffle();
+  }
+
+  function stopShuffleFromStage(event) {
     if (state !== "shuffling") return;
     event.preventDefault();
     stopShuffle();
@@ -91,9 +105,9 @@
 
   startButton.addEventListener("click", beginShuffle);
   stopButton.addEventListener("click", stopShuffle);
-  deckElement.addEventListener("click", stopShuffleFromDeck);
-  deckElement.addEventListener("pointerdown", stopShuffleFromDeck);
-  drawStage.addEventListener("pointerdown", stopShuffleFromDeck);
+  deckElement.addEventListener("click", handleDeckAction);
+  deckElement.addEventListener("pointerdown", handleDeckAction);
+  drawStage.addEventListener("pointerdown", stopShuffleFromStage);
   resetButton.addEventListener("click", resetExperience);
 
   document.addEventListener("keydown", (event) => {
